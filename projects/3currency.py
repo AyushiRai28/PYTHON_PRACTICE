@@ -10,14 +10,14 @@ rates = {
 
 # Take input from user
 while True:
-    amount = float(input("Enter the amount: "))
+    paisa = float(input("Enter the amount: "))
     source = input("Source currency (USD/EUR/CAD): ").upper()
     target = input("Target currency (USD/EUR/CAD): ").upper()
 
     # Conversion
     if source in rates and target in rates[source]:
-        converted = amount * rates[source][target]
-        print(f"{amount} {source} is equal to {converted:.2f} {target}")
+        converted = paisa * rates[source][target]
+        print(f"{paisa} {source} is equal to {converted:.2f} {target}")
 
         history.append(converted)
     else:
