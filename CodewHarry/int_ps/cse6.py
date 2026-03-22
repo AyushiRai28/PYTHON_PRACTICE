@@ -1,1 +1,0 @@
-# take number from user and print it in words

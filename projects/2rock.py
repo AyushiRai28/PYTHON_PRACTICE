@@ -7,7 +7,7 @@ print(''' enter
       p for paper
       s for scissor
       ''')
-g = input(" enter your choice:")
+g = input(" enter your choice : ")
 
 d1 = { "r": 1, "p" : 0, "s":-1}
 d2 = { 1:"rock" , 0:"paper" , -1:"scissor"}
