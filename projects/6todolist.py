@@ -16,13 +16,16 @@ while True:
     elif choice == 1:
         if task:
             for i, t in enumerate(task):
-                print(f"{i}. {t}")
+                print(f"{i+1}. {t}")
         else:
             print("No tasks yet.")
 
     elif choice== 3:
-        print(task)
-        rem = int(input("enter index of the task to be removed: ") )
+        if task:
+            for i,t in enumerate(task):
+                print(f"{i+1}. {t}")
+        rem1 = int(input("enter index of the task to be removed: ") )
+        rem = rem1 - 1
         if 0 <= rem < len(task):
             task.pop(rem)
             print(f"Removed task: {rem}")
@@ -38,11 +41,11 @@ while True:
     elif choice == 5:
         complete = int(input("Enter index for the task completed"))
         if 0<= complete < len(task) :
+            completed.append(task[complete])
             task.pop(complete)
-            completed.append(complete)
 
             print("task left: " , task)
-            print("completed task: ", complete)
+            print("completed task: ", completed)
         else:
             print("task not found")
             print ("try again!!") 
@@ -56,6 +59,28 @@ while True:
     option = input("do you want further changes ?(y/n): ").lower()
     if option != "y" :
         break
+
+
+savefile = input("Do you want  to save your tasks (y/n)??  ")
+if savefile == 'y':
+
+    filename = input("Enter file name to open/create: ")
+    
+    try:
+        with open(filename, 'r') as file:
+            print("\n--- Existing Content ---")
+            content = file.read()
+            print(content)
+    except FileNotFoundError:
+        print("\n A new file will be created.")
+        
+        with open(filename , 'w') as file:
+            file.write(f"Tasks : {task}")
+            file.write(f"Tasks completed ✅ : {completed}")
+
+        print("File saved successfully")    
+
+    
 
 print("THANK YOU !!")    
 
