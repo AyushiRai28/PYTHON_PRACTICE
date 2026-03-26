@@ -13,7 +13,7 @@ while True:
         point1 = 0
         
         
-        a = input('''a. Her favrorite color
+        a = input('''a. Her favrorite color is
                 a. purple
                 b. blue
                 c. black

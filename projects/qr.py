@@ -1,11 +1,13 @@
-from colorama import Fore, Style, init
+import qrcode
 
-init(autoreset=True)
+# Take input from user
+data = input("Enter text or URL for QR Code: ")
+filename = input("Enter file name (with .png): ")
 
-print(Fore.CYAN + Style.BRIGHT + "📋 Your To-Do List:\n")
+# Generate QR code
+img = qrcode.make(data)
 
-print( '''1️⃣  View Tasks 👀
-2️⃣  Add Task ➕
-3️⃣  Remove Task ❌
-4️⃣  Exit 🚪
-5️⃣  Mark Complete ✅ ''')
+# Save the QR code
+img.save(filename)
+
+print("QR Code generated and saved as", filename)

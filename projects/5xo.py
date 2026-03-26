@@ -32,7 +32,7 @@ player = "X"
 
 for turn in range(9):
     print_board()
-    print(f"Player {player}'s turn")
+    print(f"Player {player}'s turn ")
     
     row = int(input("Enter row (0-2): "))
     col = int(input("Enter column (0-2): "))
@@ -45,7 +45,7 @@ for turn in range(9):
     
     if check_winner(player):
         print_board()
-        print(f"Player {player} wins!")
+        print(f"Player {player} wins!!")
         break
     
     player = "O" if player == "X" else "X"

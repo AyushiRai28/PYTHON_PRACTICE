@@ -3,7 +3,7 @@ from random import randint
 def diceroll(m):
     a=1
     while(a<=m):
-        i = input("roll the dice(y/n) : ")
+        i = input("Roll the dice(y/n) : ")
         if i.lower() == "y":
             x = randint(0,6)
             print(f"your number is {x}") 
