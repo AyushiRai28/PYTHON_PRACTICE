@@ -19,18 +19,31 @@ def cashback(reels , bet):
         return 0
     
 def game():
-    while True: 
-        balance = int(input("Enter your starting balance: $"))
-        bet = int(input("Enter amount to bet: $"))
-        reels = spin_wheel()
-        cashback(reels , bet)
-        balance = balance - bet
-        print(f"You won : ${cashback}")
 
+    print("===-- WELCOME TO THE GAME --===")
+    balance = int(input("Enter your starting balance : $"))
+
+    while True: 
         choice= input("You wanna play again? (y/n)  ")
 
         if choice != 'y':
+            print(f"Your balance current blance is {balance}")
             break
+        
+
+        bet = int(input("Enter amount to bet: $"))
+        reels = spin_wheel()
+        print("|".join(reels))
+        award = cashback(reels , bet)
+        if award == 0:
+            print("you lost !")
+            balance = balance - bet
+            continue
+
+        else :
+            print(f"You won an amount of {award}")   
+            balance = balance - bet + award 
+            continue
 
 game()
-
+  
